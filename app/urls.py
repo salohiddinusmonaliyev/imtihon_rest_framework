@@ -1,4 +1,5 @@
 from django.urls import path, include
+from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
 
 from .views import *
@@ -16,4 +17,6 @@ urlpatterns = [
     path("haydovchilar/<int:a>/", HaydovchiView.as_view()),
     path('buyurtmalar/', BuyurtmaView.as_view()),
     path('buyurtmalar/<int:a>/', BuyurtmaView.as_view()),
+    path('get-token/', views.obtain_auth_token),
+
 ]
